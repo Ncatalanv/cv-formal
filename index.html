@@ -296,6 +296,18 @@
 
         .project-head .project-label { white-space: nowrap; }
 
+        .project-links {
+            display: inline-flex;
+            gap: 10px;
+            white-space: nowrap;
+        }
+
+        .project-body code {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            font-size: 0.9em;
+            color: var(--text);
+        }
+
         .project-body {
             font-size: 13px;
             color: var(--muted);
@@ -426,7 +438,7 @@
             .cv-header { margin-bottom: 12px; }
 
             .cv-name {
-                font-size: 28pt;
+                font-size: 26pt;
                 margin-bottom: 3px;
             }
 
@@ -447,21 +459,21 @@
             }
 
             .rule {
-                margin: 8px 0 10px;
+                margin: 6px 0 8px;
                 border-color: #ccc;
             }
 
             .profile { margin-bottom: 12px; }
             .profile p {
-                font-size: 10.5pt;
-                line-height: 1.55;
+                font-size: 10pt;
+                line-height: 1.48;
             }
 
-            section { margin-bottom: 12px; }
+            section { margin-bottom: 10px; }
 
             .section-title {
                 font-size: 10.5pt;
-                margin-bottom: 8px;
+                margin-bottom: 6px;
                 padding-bottom: 3px;
                 border-bottom: 1px solid #ddd;
                 break-after: avoid;
@@ -475,7 +487,7 @@
                 align-items: start;
             }
 
-            .jobs { gap: 10px; }
+            .jobs { gap: 8px; }
 
             .job {
                 padding-left: 10px;
@@ -494,15 +506,16 @@
             .period { font-size: 9pt; }
 
             .bullets {
-                font-size: 9.5pt;
-                gap: 3px;
-                line-height: 1.5;
+                font-size: 9.2pt;
+                gap: 2px;
+                line-height: 1.45;
             }
 
-            .projects { gap: 10px; }
+            .projects { gap: 8px; }
             .project-head { margin-bottom: 1px; gap: 2px 8px; }
             .project-title { font-size: 9.5pt; }
-            .project-body { font-size: 9.3pt; line-height: 1.5; }
+            .project-links { gap: 8px; }
+            .project-body { font-size: 9.1pt; line-height: 1.42; }
             .project-label { font-size: 9pt; }
 
             .skill-group + .skill-group { margin-top: 8px; }
@@ -520,7 +533,7 @@
             .edu-meta { font-size: 9.3pt; }
             .edu-item + .edu-item { margin-top: 8px; }
 
-            .cert-list { font-size: 9.3pt; gap: 2px; line-height: 1.42; }
+            .cert-list { font-size: 9.3pt; gap: 1px; line-height: 1.4; }
 
             .languages { font-size: 9.3pt; gap: 2px 18px; }
 
@@ -596,7 +609,7 @@
 
         <section class="profile">
             <h2 class="section-title">Perfil profesional</h2>
-            <p>Ingeniero de Datos y Desarrollador de Software con experiencia en diseño de arquitecturas <strong>ETL</strong>, modelado relacional y automatización de procesos. Capaz de transformar datos crudos en productos analíticos utilizando <strong>Python</strong>, <strong>SQL</strong> y entornos <strong>Cloud</strong>. Destacada orientación a la resolución de problemas y optimización continua de rendimiento.</p>
+            <p>Ingeniero de Datos y Desarrollador de Software con experiencia en diseño de arquitecturas <strong>ETL</strong>, modelado relacional y automatización de procesos, además de procesamiento distribuido con <strong>Spark</strong> y arquitecturas <strong>Lakehouse</strong> (<strong>Databricks</strong>, <strong>Delta Lake</strong>). Capaz de transformar datos crudos en productos analíticos utilizando <strong>Python</strong>, <strong>SQL</strong> y entornos <strong>Cloud</strong>. Destacada orientación a la resolución de problemas y optimización continua de rendimiento.</p>
         </section>
 
         <div class="columns">
@@ -637,10 +650,14 @@
                     <div class="projects">
                         <article>
                             <div class="project-head">
-                                <h3 class="project-title">League of Legends — ETL incremental &amp; Data App</h3>
-                                <a class="project-label" href="https://github.com/Ncatalanv/pipeline-lol-etl" target="_blank" rel="noopener noreferrer">GitHub &rarr;</a>
+                                <h3 class="project-title">League of Legends — ETL incremental y Data Lakehouse <span class="period">2026</span></h3>
+                                <span class="project-links">
+                                    <a class="project-label" href="https://github.com/Ncatalanv/pipeline-lol-etl" target="_blank" rel="noopener noreferrer" title="Repositorio del pipeline ETL">ETL &rarr;</a>
+                                    <a class="project-label" href="https://github.com/Ncatalanv/lol-databricks-lakehouse" target="_blank" rel="noopener noreferrer" title="Repositorio del Data Lakehouse">Lakehouse &rarr;</a>
+                                </span>
                             </div>
-                            <p class="project-body">Pipeline ETL modular en Python con app analítica en Streamlit sobre TiDB (MySQL): carga incremental con validación cruzada para evitar duplicados y manejo del rate limiting (429) de la API de Riot Games.</p>
+                            <p class="project-body"><strong>ETL incremental:</strong> pipeline en Python (Streamlit + TiDB/MySQL) con validación cruzada de duplicados y manejo del rate limiting (429).</p>
+                            <p class="project-body"><strong>Data Lakehouse (medallón):</strong> proyecto académico en Databricks con PySpark y Delta Lake (Bronze/Silver/Gold): +10.000 partidas de 200 jugadores Challenger, JSON anidado, <code>dbutils.secrets</code> y tablas Gold de meta y ranking.</p>
                         </article>
 
                         <article>
@@ -684,6 +701,18 @@
                             <li class="chip">ETL Pipelines</li>
                             <li class="chip">Modelado relacional</li>
                             <li class="chip">Carga incremental</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-group">
+                        <h3 class="skill-label">Big Data &amp; Lakehouse</h3>
+                        <ul class="chips">
+                            <li class="chip">Databricks</li>
+                            <li class="chip">PySpark</li>
+                            <li class="chip">Apache Spark</li>
+                            <li class="chip">Delta Lake</li>
+                            <li class="chip">Arquitectura Medallón</li>
+                            <li class="chip">Databricks Secrets</li>
                         </ul>
                     </div>
 
@@ -739,10 +768,10 @@
                     <h2 class="section-title">Certificaciones</h2>
 
                     <ul class="cert-list">
-                        <li><strong>Big Data Professional Certificate (BDPC)</strong> — Oct 2025</li>
-                        <li><strong>Microsoft Certified: Azure Data Fundamentals</strong> — Ago 2025</li>
-                        <li><strong>PCEP: Entry-Level Python Programmer</strong> — May 2025</li>
-                        <li><strong>Google Data Analytics Professional Certificate</strong> — Mar 2024</li>
+                        <li><strong>Big Data Professional (BDPC)</strong> — Oct 2025</li>
+                        <li><strong>Microsoft Azure Data Fundamentals</strong> — Ago 2025</li>
+                        <li><strong>PCEP: Python Programmer</strong> — May 2025</li>
+                        <li><strong>Google Data Analytics</strong> — Mar 2024</li>
                     </ul>
                 </section>
             </div>
