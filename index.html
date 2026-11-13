@@ -277,11 +277,24 @@
         /* Proyectos */
         .projects { display: flex; flex-direction: column; gap: 16px; }
 
+        .project-head {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 4px 12px;
+            flex-wrap: wrap;
+            margin-bottom: 3px;
+        }
+
         .project-title {
             font-size: 13.5px;
             font-weight: 600;
             margin-bottom: 3px;
         }
+
+        .project-head .project-title { margin-bottom: 0; }
+
+        .project-head .project-label { white-space: nowrap; }
 
         .project-body {
             font-size: 13px;
@@ -410,7 +423,7 @@
                 margin: 0;
             }
 
-            .cv-header { margin-bottom: 14px; }
+            .cv-header { margin-bottom: 12px; }
 
             .cv-name {
                 font-size: 28pt;
@@ -434,17 +447,17 @@
             }
 
             .rule {
-                margin: 10px 0 12px;
+                margin: 8px 0 10px;
                 border-color: #ccc;
             }
 
-            .profile { margin-bottom: 14px; }
+            .profile { margin-bottom: 12px; }
             .profile p {
                 font-size: 10.5pt;
                 line-height: 1.55;
             }
 
-            section { margin-bottom: 14px; }
+            section { margin-bottom: 12px; }
 
             .section-title {
                 font-size: 10.5pt;
@@ -462,7 +475,7 @@
                 align-items: start;
             }
 
-            .jobs { gap: 12px; }
+            .jobs { gap: 10px; }
 
             .job {
                 padding-left: 10px;
@@ -486,7 +499,8 @@
                 line-height: 1.5;
             }
 
-            .projects { gap: 12px; }
+            .projects { gap: 10px; }
+            .project-head { margin-bottom: 1px; gap: 2px 8px; }
             .project-title { font-size: 9.5pt; }
             .project-body { font-size: 9.3pt; line-height: 1.5; }
             .project-label { font-size: 9pt; }
@@ -622,19 +636,19 @@
 
                     <div class="projects">
                         <article>
-                            <h3 class="project-title">League of Legends — ETL incremental &amp; Data App</h3>
-                            <p class="project-body">
-                                <strong>Arquitectura:</strong> pipeline ETL modular en Python integrado con una interfaz web analítica interactiva en Streamlit.
-                            </p>
-                            <p class="project-body">
-                                <strong>Carga incremental:</strong> lógica de validación cruzada para insertar únicamente registros de partidas nuevos en TiDB (MySQL), evitando duplicidad.
-                            </p>
-                            <p class="project-body">
-                                <strong>API &amp; Rate Limiting:</strong> extracción de datos en vivo desde la API de Riot Games manejando estratégicamente los límites de peticiones (429).
-                            </p>
-                            <p class="project-body" style="margin-top: 3px;">
-                                <a class="project-label" href="https://github.com/Ncatalanv/pipeline-lol-etl" target="_blank" rel="noopener noreferrer">Ver proyecto &rarr;</a>
-                            </p>
+                            <div class="project-head">
+                                <h3 class="project-title">League of Legends — ETL incremental &amp; Data App</h3>
+                                <a class="project-label" href="https://github.com/Ncatalanv/pipeline-lol-etl" target="_blank" rel="noopener noreferrer">GitHub &rarr;</a>
+                            </div>
+                            <p class="project-body">Pipeline ETL modular en Python con app analítica en Streamlit sobre TiDB (MySQL): carga incremental con validación cruzada para evitar duplicados y manejo del rate limiting (429) de la API de Riot Games.</p>
+                        </article>
+
+                        <article>
+                            <div class="project-head">
+                                <h3 class="project-title">MR Tu Amigo Tributario — Sitio web corporativo <span class="period">2026</span></h3>
+                                <a class="project-label" href="https://www.mrtuamigotributario.cl" target="_blank" rel="noopener noreferrer">Ver sitio &rarr;</a>
+                            </div>
+                            <p class="project-body">Sitio oficial de una firma contable y tributaria: landing, servicios, blog y calendario tributario con <strong>Sanity</strong> (CMS headless, ISR cada 60 s), formulario con Server Actions + Nodemailer y SEO técnico (JSON-LD, sitemap, GA4). Stack: Next.js 16, React 19, Tailwind 4, Sanity y Vercel.</p>
                         </article>
                     </div>
                 </section>
@@ -701,6 +715,7 @@
                             <li class="chip">Streamlit</li>
                             <li class="chip">FastAPI</li>
                             <li class="chip">Next.js</li>
+                            <li class="chip">Sanity</li>
                             <li class="chip">PyAutoGUI / OpenCV</li>
                         </ul>
                     </div>
