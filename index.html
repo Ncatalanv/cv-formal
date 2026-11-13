@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicolás Catalán Valenzuela - Data Engineer</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --text-color: #c9d1d9;
+            --heading-color: #ffffff;
+            --accent-color: #58a6ff;
+            --border-color: #30363d;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            max-width: 800px;
+            width: 100%;
+        }
+        header {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: var(--heading-color);
+            margin: 0 0 5px 0;
+            font-size: 2.5em;
+            letter-spacing: -0.5px;
+        }
+        h2 {
+            color: var(--heading-color);
+            font-size: 1.5em;
+            margin-top: 35px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: var(--heading-color);
+            margin: 20px 0 5px 0;
+            font-size: 1.15em;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        .date {
+            font-size: 0.85em;
+            color: #8b949e;
+            font-weight: normal;
+        }
+        p {
+            margin: 10px 0;
+        }
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .contact-info {
+            display: flex;
+            gap: 15px;
+            font-size: 0.9em;
+            color: #8b949e;
+            margin-top: 10px;
+        }
+        ul {
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+        li {
+            margin-bottom: 6px;
+        }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .skill-tag {
+            background-color: rgba(88, 166, 255, 0.1);
+            color: var(--accent-color);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            border: 1px solid rgba(88, 166, 255, 0.2);
+        }
+        /* Estilos específicos para cuando presiones Ctrl+P e imprimas como PDF */
+        @media print {
+            body {
+                background-color: white;
+                color: black;
+                padding: 0;
+            }
+            :root {
+                --bg-color: #ffffff;
+                --text-color: #333333;
+                --heading-color: #000000;
+                --accent-color: #0366d6;
+                --border-color: #e1e4e8;
+            }
+            .skill-tag {
+                border: 1px solid #ccc;
+                color: black;
+                background-color: transparent;
+            }
+            .container {
+                max-width: 100%;
+            }
+            a {
+                color: black;
+                text-decoration: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Nicolás Catalán Valenzuela</h1>
+            <p style="font-size: 1.2em; color: var(--heading-color); margin: 0 0 10px 0;">Data Engineer | Desarrollador Back-end</p>
+            <div class="contact-info">
+                <span>📍 Santiago, Chile</span>
+                <span>🔗 <a href="#">LinkedIn</a></span> <!-- REEMPLAZA EL # CON TU LINKEDIN -->
+                <span>🐙 <a href="https://github.com/Ncatalanv">GitHub</a></span>
+            </div>
+        </header>
+
+        <section>
+            <p>Ingeniero de Datos y Desarrollador de Software con experiencia en diseño de arquitecturas ETL, modelado relacional y automatización de procesos. Capaz de transformar datos crudos en productos analíticos utilizando Python, SQL y entornos Cloud. Destacada orientación a la resolución de problemas y optimización continua de rendimiento.</p>
+        </section>
+
+        <section>
+            <h2>Experiencia Profesional</h2>
+            
+            <h3><span>Data Engineer & Analista Programador | Comercializadora INCORPLAS SpA</span> <span class="date">Ene 2026 – Presente</span></h3>
+            <ul>
+                <li>Desarrollo de una aplicación integral (Java GUI, FastAPI, Next.js) para la gestión unificada de inventario, ventas y flujos financieros.</li>
+                <li>Diseño e implementación de automatizaciones con n8n en contenedores Docker para la ingesta y parseo de registros financieros.</li>
+            </ul>
+
+            <h3><span>Operador y Desarrollador de Automatización | Comidas La Punta</span> <span class="date">Ago 2023 – Feb 2024</span></h3>
+            <ul>
+                <li>Desarrollo de un bot RPA en Python (PyAutoGUI, OpenCV) para el procesamiento en lote de recibos de entrega, reduciendo el tiempo de carga manual.</li>
+                <li>Gestión de operaciones de servicio al cliente y resolución de problemas operativos.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Proyectos Destacados</h2>
+            
+            <h3><span>League of Legends Incremental ETL & Data App</span> <span class="date"><a href="https://github.com/Ncatalanv/pipeline-lol-etl">Ver Proyecto</a></span></h3>
+            <ul>
+                <li><strong>Arquitectura:</strong> Construcción de un pipeline ETL modular en Python integrado con una interfaz web analítica interactiva en Streamlit.</li>
+                <li><strong>Carga Incremental:</strong> Implementación de lógica de validación cruzada para insertar únicamente registros de partidas nuevos en TiDB (MySQL), evitando duplicidad.</li>
+                <li><strong>API & Rate Limiting:</strong> Extracción de datos en vivo desde la API de Riot Games manejando estratégicamente los límites de peticiones (Rate Limit 429).</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Educación y Certificaciones</h2>
+            
+            <h3><span>Ingeniería en Informática (Especialidad Data Engineering)</span> <span class="date">En curso</span></h3>
+            <p style="margin-top: 0;">Duoc UC</p>
+            
+            <h3><span>Licenciatura en Kinesiología</span> <span class="date">2019 – 2023</span></h3>
+            <p style="margin-top: 0;">Universidad Andrés Bello</p>
+            
+            <ul style="margin-top: 15px;">
+                <li><strong>Big Data Professional Certificate (BDPC)</strong> - Oct 2025</li>
+                <li><strong>Microsoft Certified: Azure Data Fundamentals</strong> - Ago 2025</li>
+                <li><strong>PCEP: Certified Entry-Level Python Programmer</strong> - May 2025</li>
+                <li><strong>Google Data Analytics Professional Certificate</strong> - Mar 2024</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Habilidades Técnicas</h2>
+            <div class="skills">
+                <span class="skill-tag">Python (Pandas, SQLAlchemy)</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">SQL (TiDB, MySQL)</span>
+                <span class="skill-tag">ETL Pipelines</span>
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">Streamlit</span>
+                <span class="skill-tag">n8n / PyAutoGUI</span>
+                <span class="skill-tag">Git / GitHub Actions</span>
+                <span class="skill-tag">Linux / WSL2</span>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
